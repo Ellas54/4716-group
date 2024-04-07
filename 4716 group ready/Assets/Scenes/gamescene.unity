@@ -303,6 +303,7 @@ GameObject:
   - component: {fileID: 239677685}
   - component: {fileID: 239677684}
   - component: {fileID: 239677683}
+  - component: {fileID: 239677687}
   m_Layer: 5
   m_Name: MenuCancel
   m_TagString: Untagged
@@ -374,7 +375,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2117245999}
+      - m_Target: {fileID: 239677687}
         m_TargetAssemblyTypeName: CloseMenu, Assembly-CSharp
         m_MethodName: menuCancel
         m_Mode: 1
@@ -385,7 +386,19 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
+      - m_Target: {fileID: 777500005}
+        m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &239677684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,6 +437,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239677681}
   m_CullTransparentMesh: 1
+--- !u!114 &239677687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239677681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3285c09fbb075dc49b99dd3cbd16694f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quit: {fileID: 176153216}
 --- !u!1 &383252283
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,8 +565,9 @@ GameObject:
   - component: {fileID: 777500004}
   - component: {fileID: 777500003}
   - component: {fileID: 777500002}
+  - component: {fileID: 777500005}
   m_Layer: 5
-  m_Name: MeunCall
+  m_Name: MenuCall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -622,6 +649,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 777500005}
+        m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
+        m_MethodName: Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &777500003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,6 +699,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777500000}
   m_CullTransparentMesh: 1
+--- !u!114 &777500005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777500000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df74ee19fb21b84383e82a23241ec0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuCall: {fileID: 176153216}
 --- !u!1 &792103825
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,6 +818,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: first scene
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 777500005}
+        m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &792103829
@@ -1219,12 +1283,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1598150886}
   - component: {fileID: 1598150885}
+  - component: {fileID: 1598150887}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!108 &1598150885
 Light:
@@ -1302,7 +1367,23 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: -207, y: -30, z: 0}
+--- !u!111 &1598150887
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598150884}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: fc664830e4632114eb46679af35b239d, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: fc664830e4632114eb46679af35b239d, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1772428646
 GameObject:
   m_ObjectHideFlags: 0
